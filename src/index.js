@@ -3,6 +3,20 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 
+const config = {
+  rules: [
+    {
+      id: "radiogroup",
+      enabled: true,
+    },
+  ],
+};
+
+if (process.env.NODE_ENV !== "production") {
+  const axe = require("react-axe");
+  axe(React, ReactDOM, 1000, config);
+}
+
 ReactDOM.render(
   <React.StrictMode>
     <App />

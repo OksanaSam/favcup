@@ -1,24 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
 
 function App() {
+  const onClick = () => {
+    const key = process.env.REACT_APP_API_KEY;
+    const config = { headers: { "user-key": key } };
+    const url =
+      "https://developers.zomato.com/api/v2.1/search?entity_id=89&entity_type=city";
+    const search = async () => {
+      const response = await axios.get(url, config);
+      console.log(response.data.restaurants[0]);
+    };
+    search();
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button onClick={onClick}>here</button>
     </div>
   );
 }

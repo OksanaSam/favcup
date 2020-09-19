@@ -4,4 +4,5 @@ FavCup app will help you find the best cappuccino in the city. Built with React,
 
 
 Photo by Nathan Dumlao @nate_dumlao
+
 The app was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
